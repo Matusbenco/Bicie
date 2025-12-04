@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predaj: TAYE RockPro Custom Kit + Byzance & DFP9410</title>
+    <style>
+        /* --- 1. VISUÁLNY ŠTÝL (Dark & Gold Premium) --- */
+        :root {
+            --gold: #d4af37;
+            --gold-dim: #8a7018;
+            --bg-body: #050505;
+            --bg-card: #111111;
+            --text-main: #ffffff;
+            --text-sec: #a0a0a0;
+            --accent-green: #2ecc71;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+        .text-gold { color: var(--gold); }
+        .text-bold { font-weight: 700; }
+
+        /* --- 2. HEADER & HLAVNÁ FOTO --- */
+        header {
+            width: 100%;
+            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000 70%);
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+        }
+
+        .hero-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .main-img {
+            width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            filter: drop-shadow(0 0 30px rgba(0,0,0,0.9));
+            margin-top: 20px;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid #333;
+            max-width: 900px;
+            margin: -40px auto 0;
+            padding: 30px;
+            position: relative;
+            z-index: 10;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .badges {
+            display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px;
+        }
+        .badge {
+            background: var(--gold); color: #000; padding: 5px 12px; 
+            font-weight: bold; font-size: 0.85rem; border-radius: 4px;
+        }
+
+        /* --- 2.5 SEKCIA: STAV A POPIS --- */
+        .info-section {
+            max-width: 1000px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-box {
+            background: #1a1a1a;
+            padding: 25px;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;}
+        .info-box p { font-size: 0.95rem; color: #ccc; margin: 0; }
+
+        /* --- 3. CENOVÁ KALKULÁCIA --- */
+        .pricing-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .pricing-table-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-dim);
+            border-radius: 10px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-table-wrapper::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold);
+        }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        
+        th { text-align: left; color: var(--text-sec); font-size: 0.9rem; padding: 15px 10px; border-bottom: 1px solid #333; }
+        td { padding: 12px 10px; border-bottom: 1px solid #222; vertical-align: middle; }
+        
+        .row-item strong { display: block; font-size: 1.1rem; }
+        .row-item span { font-size: 0.85rem; color: #888; }
+        
+        .col-price { text-align: right; white-space: nowrap; font-family: 'Courier New', monospace; letter-spacing: -0.5px; }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+        
+        .total-row td { border-top: 2px solid var(--gold); border-bottom: none; padding-top: 25px; }
+        .total-label { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; }
+        
+        .final-price-tag {
+            font-size: 3.5rem; color: var(--gold); font-weight: 800; line-height: 1;
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* --- 4. KARTY PRODUKTOV --- */
+        .details-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #151515;
+            border: 1px solid #2a2a2a;
+            border-radius: 6px;
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
+
+        .card-header {
+            border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 15px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .card-header h3 { color: var(--gold); font-size: 1.2rem; }
+        
+        .spec-list li {
+            list-style: none; margin-bottom: 10px; padding-left: 20px; position: relative; color: #ccc; font-size: 0.95rem;
+        }
+        .spec-list li::before {
+            content: '•'; color: var(--gold); position: absolute; left: 0; font-size: 1.2rem; line-height: 1rem;
+        }
+        .list-sub-item { font-size: 0.85rem; color: #999; display: block; margin-top: 2px; }
+
+        /* --- 5. GALÉRIA --- */
+        .gallery-wrap { background: #000; padding: 60px 20px; }
+        .gallery-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
+        
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px; max-width: 1400px; margin: 0 auto;
+        }
+        
+        .g-item {
+            height: 220px; overflow: hidden; cursor: pointer; border-radius: 3px; position: relative;
+        }
+        .g-item img {
+            width: 100%; height: 100%; object-fit: cover; transition: 0.5s; opacity: 0.8;
+        }
+        .g-item:hover img { transform: scale(1.1); opacity: 1; }
+
+        /* --- 6. LIGHTBOX --- */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.97); z-index: 9999;
+            display: none; align-items: center; justify-content: center;
+        }
+        .lightbox.active { display: flex; }
+        .lb-img { max-width: 90%; max-height: 85vh; border: 2px solid #333; box-shadow: 0 0 50px #000; }
+        
+        .lb-ctrl {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            font-size: 3rem; color: #555; cursor: pointer; padding: 20px; transition: 0.2s; user-select: none;
+        }
+        .lb-ctrl:hover { color: var(--gold); }
+        .lb-prev { left: 10px; } .lb-next { right: 10px; }
+        .lb-close { position: absolute; top: 20px; right: 30px; font-size: 3rem; color: #fff; cursor: pointer; }
+
+        /* --- 7. FOOTER --- */
+        footer {
+            background: #0a0a0a; border-top: 1px solid #222; text-align: center; padding: 60px 20px;
+        }
+        .btn-buy {
+            display: inline-block; background: var(--gold); color: #000;
+            padding: 18px 50px; font-size: 1.4rem; font-weight: 800; text-transform: uppercase;
+            text-decoration: none; border-radius: 4px; margin-top: 25px;
+            box-shadow: 0 0 30px rgba(212,175,55,0.2); transition: 0.3s;
+        }
+        .btn-buy:hover { background: #fff; box-shadow: 0 0 50px rgba(255,255,255,0.4); }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 1.8rem; }
+            .final-price-tag { font-size: 2.8rem; }
+            td, th { padding: 10px 5px; font-size: 0.85rem; }
+            .old-price { font-size: 1rem; }
+            .info-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-wrapper">
+            <img src="30.jfif" alt="Taye Drum Kit" class="main-img">
+            
+            <div class="hero-content">
+                <h1>Bicia Zostava <br> <span class="text-gold">TAYE RockPro CUSTOM</span></h1>
+                <p style="color: #bbb; font-size: 1.1rem;">
+                    Model RP522J/JB Custom. Vyladený zvuk, prémiové činely a špičkový hardvér.
+                </p>
+                <div class="badges">
+                    <span class="badge">Taye Drums</span>
+                    <span class="badge">Full Evans Tuning</span>
+                    <span class="badge">Meinl Byzance China</span>
+                    <span class="badge">Yamaha DFP 9410</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <div class="info-box">
+            <h3>Top Stav & História</h3>
+            <p>
+                Súprava je v bezchybnom vizuálnom aj technickom stave. 
+                <strong>Blany sú ako nové</strong> (menené len pred pár mesiacmi). 
+                Činelová sada bola postupne kompletizovaná o prémiové kúsky. 
+                Dvojpedál Yamaha nesie známky bežného používania (patina), no technicky je to <strong>100% funkčný a presný stroj</strong>.
+            </p>
+        </div>
+        <div class="info-box">
+            <h3>Stredná profesionálna trieda (Semi-Pro)</h3>
+            <p>
+                <strong>Taye RockPro</strong> nie je žiadna začiatočnícka "preglejka". Ide o poctivú stredne pokročilú radu, ktorá sa nestratí v skúšobni ani na <strong>veľkom pódiu</strong>. 
+                Vďaka profi blanám Evans a činelom Meinl má súprava dospelý, štúdiový zvuk.
+            </p>
+        </div>
+    </section>
+
+    <section class="pricing-container">
+        <div class="pricing-table-wrapper">
+            <h2 style="text-align: center; margin-bottom: 20px;">Detailná kalkulácia hodnoty</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60%;">Položka & Špecifikácia</th>
+                        <th class="col-price">Pôvodná cena (Nové)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-item">
+                            <strong>TAYE RockPro (Shell Set)</strong>
+                            <span>Model RP522J/JB Jet Black Custom (Sada bubnov)</span>
+                        </td>
+                        <td class="col-price old-price">~ 1 000 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Nové Blany + Tlmenie (Komplet sada)</strong>
+                            <span>EVANS Black Chrome, Hydraulic, EMAD... (viď detaily nižšie)</span>
+                        </td>
+                        <td class="col-price old-price">~ 365 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Sada Činelov Meinl Mb8</strong>
+                            <span>Hi-hat 14", Crash 16", Ride 20" (B8 Bronz)</span>
+                        </td>
+                        <td class="col-price old-price">~ 550 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Extra Činel: MEINL 16" BYZANCE CHINA</strong>
+                            <span class="text-gold">Prémiový B20 Bronz (Hand Hammered)</span>
+                        </td>
+                        <td class="col-price old-price">~ 360 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Masívne Stojany + Stolička</strong>
+                            <span>Sada ťažkého hardvéru (šibenice, snare stojan, hi-hat)</span>
+                        </td>
+                        <td class="col-price old-price">~ 350 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Dvojpedál YAMAHA DFP 9410</strong>
+                            <span class="text-gold">Profesionálny direct drive dvojšľapka</span>
+                        </td>
+                        <td class="col-price old-price">~ 400 €</td>
+                    </tr>
+                    <tr>
+                        <td class="row-item">
+                            <strong>Príslušenstvo (Obaly + Tlmítka)</strong>
+                            <span>Sada obalov (130€) + Vic Firth MutePP5 (100€)</span>
+                        </td>
+                        <td class="col-price old-price">230 €</td>
+                    </tr>
+
+                    <tr class="total-row">
+                        <td class="total-label">Hodnota tejto zostavy (Nové)</td>
+                        <td class="col-price" style="color: #aaa; font-size: 1.4rem; font-weight: bold;">~ 3 255 €</td>
+                    </tr>
+                    <tr>
+                        <td style="border:none; padding-top: 0;">
+                            <span style="color: var(--accent-green); font-size: 1.1rem; font-weight: bold;">
+                                ✅ Ušetríte neuveriteľných 1 865 €
+                            </span>
+                        </td>
+                        <td class="col-price" style="border:none; padding-top: 0;">
+                            <div class="final-price-tag">1 390 €</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="details-section">
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>TAYE RockPro & Evans</h3>
+                <span style="font-size: 2rem;"></span>
+            </div>
+            <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
+                Kompletné preblanenie podľa faktúry pre masívny zvuk.
+            </p>
+            <ul class="spec-list">
+                <li><strong>Tomy (Úderové):</strong> EVANS Black Chrome Fusion TomPack (10,12,14)</li>
+                <li><strong>Tomy (Rezonančné):</strong> EVANS G1 Clear Fusion TomPack (10,12,14)</li>
+                <li><strong>Snare:</strong> EVANS Hydraulic Black 14" + Glass 500 14"</li>
+                <li><strong>Kopák:</strong> EVANS Emad Onyx 22" + EQ3 Resonant Black 22"</li>
+                <li><strong>Tlmenie/Ochrana:</strong> SONITUS Kicker 22x16 + EVANS EQPB2 Patch (2ks)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Činely Meinl (Byzance & Mb8)</h3>
+                <span style="font-size: 2rem;"></span>
+            </div>
+            <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
+                Kombinácia profesionálnej série Mb8 a špičkovej "vlajkovej lode" Byzance.
+            </p>
+            <ul class="spec-list">
+                <li><strong>Meinl 16" Byzance China:</strong> <span class="text-gold">Hand Hammered B20 Bronz</span>. Agresívny, temný, trashy zvuk.</li>
+                <li><strong>Meinl Mb8 Hi-Hat 14":</strong> Ostrý, jasný (B8).</li>
+                <li><strong>Meinl Mb8 Crash 16":</strong> Výbušný atak.</li>
+                <li><strong>Meinl Mb8 Ride 20":</strong> Čistý ping a silný bell.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Masívny Hardware & Pedál</h3>
+                <span style="font-size: 2rem;"></span>
+            </div>
+            <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
+                Extrémne stabilný hardvér a špičková dvojšľapka.
+            </p>
+            <ul class="spec-list">
+                <li><strong>Dvojšľapka YAMAHA DFP 9410:</strong> Profesionálny model, direct drive (priamy prevod), extrémne rýchla a presná odozva.</li>
+                <li><strong>Stojany:</strong> Sada extra masívnych šibeníc (boom stands) pre ťažké činely.</li>
+                <li><strong>Ostatné:</strong> Pevný snare stojan, hi-hat stojan a stabilná stolička.</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-color: #2ecc71;">
+            <div class="card-header">
+                <h3 style="color: #2ecc71;">Full Príslušenstvo</h3>
+                <span style="font-size: 2rem;"></span>
+            </div>
+            <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
+                Pripravené na cesty aj tiché cvičenie v byte.
+            </p>
+            <ul class="spec-list">
+                <li>
+                    <strong>Sada Obalov (Cases):</strong>
+                    <span class="list-sub-item">Kompletná ochrana pre celú sadu pri prevoze. (Hodnota 130€)</span>
+                </li>
+                <li>
+                    <strong>Tlmítka Vic Firth MUTEPP5:</strong>
+                    <span class="list-sub-item">Špičkové gumené pady na všetky bubny a činely pre tiché hranie. (Hodnota 100€)</span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="gallery-wrap">
+        <h2 class="gallery-title">Detailná Galéria</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <footer id="kontakt">
+        <p style="color: #888; text-transform: uppercase; letter-spacing: 2px;">Máte záujem o túto profi zostavu?</p>
+        <h2 style="font-size: 2.5rem; margin: 15px 0;">+421 905 351 100</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto;">
+            Preferujem osobný odber (Košice) s možnosťou vyskúšania. Vzhľadom na veľkosť a množstvo príslušenstva je to najlepšia voľba. Po dohode viem aj doviesť.
+        </p>
+        <a href="mailto:mtsbenco@gmail.com" class="btn-buy">mtsbenco@gmail.com</a>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lb-close">&times;</span>
+        <div class="lb-ctrl lb-prev">&#10094;</div>
+        <div class="lb-ctrl lb-next">&#10095;</div>
+        <img src="" alt="Detail" class="lb-img" id="lb-img">
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT PRE GALÉRIU --- */
+        const totalImages = 31; // Fotky 1.jfif az 31.jfif
+        const fileExt = '.jfif';
+        const galleryGrid = document.getElementById('gallery-grid');
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lb-img');
+        
+        let images = [];
+
+        // Pridaj ostatne fotky 31 -> 1
+        for (let i = totalImages; i >= 1; i--) {
+            images.push(`${i}${fileExt}`);
+        }
+
+        let currentIndex = 0;
+
+        images.forEach((src, index) => {
+            const div = document.createElement('div');
+            div.className = 'g-item';
+            div.innerHTML = `<img src="${src}" loading="lazy" alt="Foto">`;
+            div.querySelector('img').onerror = function() { this.parentElement.style.display = 'none'; };
+            div.onclick = () => openLightbox(index);
+            galleryGrid.appendChild(div);
+        });
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLbImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLbImage() {
+            lbImg.src = images[currentIndex];
+        }
+
+        function nextImg(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLbImage();
+        }
+
+        function prevImg(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLbImage();
+        }
+
+        document.querySelector('.lb-close').onclick = closeLightbox;
+        document.querySelector('.lb-next').onclick = nextImg;
+        document.querySelector('.lb-prev').onclick = prevImg;
+        lightbox.onclick = (e) => { if(e.target === lightbox) closeLightbox(); };
+
+        document.addEventListener('keydown', (e) => {
+            if(!lightbox.classList.contains('active')) return;
+            if(e.key === 'Escape') closeLightbox();
+            if(e.key === 'ArrowRight') nextImg();
+            if(e.key === 'ArrowLeft') prevImg();
+        });
+    </script>
+</body>
+</html>
