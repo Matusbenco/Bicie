@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predaj: TAYE RockPro Custom Kit + Byzance & DFP9410</title>
+    <title>Predaj: TAYE RockPro Profi Custom + Meinl & Silent Pack</title>
     <style>
         /* --- 1. VISUÁLNY ŠTÝL (Dark & Gold Premium) --- */
         :root {
@@ -14,6 +14,7 @@
             --text-main: #ffffff;
             --text-sec: #a0a0a0;
             --accent-green: #2ecc71;
+            --accent-blue: #3498db; /* Pre Silent mód */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,11 +24,12 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden; /* Zabraňuje horizontálnemu scrollovania celej stránky */
+            overflow-x: hidden;
         }
 
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 1px; color: #fff; }
         .text-gold { color: var(--gold); }
+        .text-blue { color: var(--accent-blue); }
         .text-bold { font-weight: 700; }
 
         /* --- 2. HEADER & HLAVNÁ FOTO --- */
@@ -80,6 +82,9 @@
             background: var(--gold); color: #000; padding: 5px 12px; 
             font-weight: bold; font-size: 0.85rem; border-radius: 4px;
         }
+        .badge.blue {
+            background: var(--accent-blue); color: #fff;
+        }
 
         /* --- 2.5 SEKCIA: STAV A POPIS --- */
         .info-section {
@@ -98,6 +103,10 @@
             border-radius: 0 8px 8px 0;
         }
 
+        .info-box.blue-border {
+            border-left-color: var(--accent-blue);
+        }
+
         .info-box h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;}
         .info-box p { font-size: 0.95rem; color: #ccc; margin: 0; }
 
@@ -114,7 +123,7 @@
             border-radius: 10px;
             padding: 40px;
             position: relative;
-            overflow: hidden; /* Dôležité pre mobil */
+            overflow: hidden;
         }
         
         .pricing-table-wrapper::before {
@@ -150,7 +159,6 @@
         /* --- 4. KARTY PRODUKTOV --- */
         .details-section {
             display: grid;
-            /* Zmena na 300px min, aby sa na mobile (cca 360px) zmestila jedna karta */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 1400px;
@@ -186,7 +194,7 @@
         .gallery-title { text-align: center; margin-bottom: 40px; font-size: 2rem; }
         
         .gallery-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Menšie pre mobil */
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 12px; max-width: 1400px; margin: 0 auto;
         }
         
@@ -229,38 +237,22 @@
 
         /* --- 8. RESPONZIVITA (MOBIL) --- */
         @media (max-width: 768px) {
-            .hero-content { 
-                margin: -20px 10px 0; 
-                padding: 20px; 
-            }
+            .hero-content { margin: -20px 10px 0; padding: 20px; }
             .hero-content h1 { font-size: 1.8rem; }
-            
             .info-section { grid-template-columns: 1fr; gap: 15px; }
-            
-            /* Tabuľka na mobile */
             .pricing-table-wrapper { padding: 15px; }
             table, thead, tbody, th, td, tr { display: block; }
             thead tr { position: absolute; top: -9999px; left: -9999px; }
             tr { border: 1px solid #333; margin-bottom: 15px; border-radius: 8px; padding: 10px; background: #0e0e0e; }
             td { border: none; padding: 5px 0; position: relative; text-align: right; }
-            td::before { 
-                position: absolute; left: 0; width: 45%; text-align: left; font-weight: bold; color: #666; font-size: 0.85rem;
-            }
-            /* Uprava zobrazenia riadkov tabulky */
+            td::before { position: absolute; left: 0; width: 45%; text-align: left; font-weight: bold; color: #666; font-size: 0.85rem; }
             .row-item { text-align: left; border-bottom: 1px solid #222; padding-bottom: 10px; margin-bottom: 5px; }
             .col-price { text-align: right; font-size: 1.2rem; color: var(--gold); }
-            
-            /* Total riadok */
             .total-row td { border-top: none; padding-top: 10px; text-align: center; }
             .final-price-tag { font-size: 2.5rem; }
-            
-            /* Galeria */
             .g-item { height: 180px; }
-            
-            /* Lightbox tlacitka */
             .lb-ctrl { font-size: 2rem; padding: 10px; background: rgba(0,0,0,0.5); }
-            .lb-prev { left: 0; }
-            .lb-next { right: 0; }
+            .lb-prev { left: 0; } .lb-next { right: 0; }
         }
     </style>
 </head>
@@ -273,13 +265,13 @@
             <div class="hero-content">
                 <h1>Bicia Zostava <br> <span class="text-gold">TAYE RockPro CUSTOM</span></h1>
                 <p style="color: #bbb; font-size: 1.1rem;">
-                    Model RP522J/JB Custom. Vyladený zvuk, prémiové činely a špičkový hardvér.
+                    Profi sada vyladená do posledného detailu. Meinl Byzance, Soundcaster, DFP9410 a aj možnosť tichého hrania.
                 </p>
                 <div class="badges">
-                    <span class="badge">Taye Drums</span>
                     <span class="badge">Full Evans Tuning</span>
-                    <span class="badge">Meinl Byzance China</span>
+                    <span class="badge">Profi Meinl Set</span>
                     <span class="badge">Yamaha DFP 9410</span>
+                    <span class="badge blue">Silent Practice Ready</span>
                 </div>
             </div>
         </div>
@@ -287,26 +279,26 @@
 
     <section class="info-section">
         <div class="info-box">
-            <h3>Top Stav & História</h3>
+            <h3>⭐ 100% technický stav & profi výbava</h3>
             <p>
-                Súprava je v bezchybnom vizuálnom aj technickom stave. 
-                <strong>Blany sú ako nové</strong> (menené len pred pár mesiacmi). 
-                Činelová sada bola postupne kompletizovaná o prémiové kúsky. 
-                Dvojpedál Yamaha nesie známky bežného používania (patina), no technicky je to <strong>100% funkčný a presný stroj</strong>.
+                Súprava je technicky v bezchybnom stave prešli kompletným Evans preblanením v auguste 2025. 
+                Činelová sada obsahuje prémiové rady <strong>Soundcaster Custom</strong>, <strong>radu Mb8</strong> a ručne tepanú <strong>Byzance China</strong>.
+                Hardvér je masívny a stabilný, pripravený na časté hranie.
             </p>
         </div>
-        <div class="info-box">
-            <h3>Stredná profesionálna trieda (Semi-Pro)</h3>
+        <div class="info-box blue-border">
+            <h3 style="color: var(--accent-blue);">Hrajte Nahlas aj Potichu!</h3>
             <p>
-                <strong>Taye RockPro</strong> nie je žiadna začiatočnícka "preglejka". Ide o poctivú stredne pokročilú radu, ktorá sa nestratí v skúšobni ani na <strong>veľkom pódiu</strong>. 
-                Vďaka profi blanám Evans a činelom Meinl má súprava dospelý, štúdiový zvuk.
+                Súčasťou je kompletný set pre tiché hranie€:
+                <strong>Evans dB Zero</strong> (sieťkové blany na celú sadu) a <strong>Meinl Cymbal Mutes</strong>.
+                Ideálne riešenie pre cvičenie doma bez rušenia susedov.
             </p>
         </div>
     </section>
 
     <section class="pricing-container">
         <div class="pricing-table-wrapper">
-            <h2 style="text-align: center; margin-bottom: 20px;">Detailná kalkulácia hodnoty</h2>
+            <h2 style="text-align: center; margin-bottom: Kalkulácia hodnoty</h2>
             
             <table>
                 <thead>
@@ -326,30 +318,23 @@
                     <tr>
                         <td class="row-item">
                             <strong>Nové Blany + Tlmenie (Komplet sada)</strong>
-                            <span>EVANS Black Chrome, Hydraulic, EMAD... (viď detaily nižšie)</span>
+                            <span>EVANS Black Chrome, Hydraulic, EMAD...</span>
                         </td>
-                        <td class="col-price old-price">~ 365 €</td>
+                        <td class="col-price old-price">~ 400 €</td>
                     </tr>
                     <tr>
                         <td class="row-item">
-                            <strong>Sada Činelov Meinl Mb8</strong>
-                            <span>Hi-hat 14", Crash 16", Ride 20" (B8 Bronz)</span>
+                            <strong>Činely Meinl Sada (Byzance, Soundcaster, Mb8)</strong>
+                            <span>China Byzance, Soundcaster Custom Crash, Mb8 Set (HH, Crash, Ride)</span>
                         </td>
-                        <td class="col-price old-price">~ 550 €</td>
+                        <td class="col-price old-price">~ 1 000 € +</td>
                     </tr>
                     <tr>
                         <td class="row-item">
-                            <strong>Extra Činel: MEINL 16" BYZANCE CHINA</strong>
-                            <span class="text-gold">Prémiový B20 Bronz (Hand Hammered)</span>
+                            <strong>Dokúpený Kvalitný Hardware</strong>
+                            <span>Stojany (Snare, Tom, Crash, Ride), HH5000, Stolička</span>
                         </td>
-                        <td class="col-price old-price">~ 360 €</td>
-                    </tr>
-                    <tr>
-                        <td class="row-item">
-                            <strong>Masívne Stojany + Stolička</strong>
-                            <span>Sada ťažkého hardvéru (šibenice, snare stojan, hi-hat)</span>
-                        </td>
-                        <td class="col-price old-price">~ 350 €</td>
+                        <td class="col-price old-price">~ 500 €</td>
                     </tr>
                     <tr>
                         <td class="row-item">
@@ -360,24 +345,24 @@
                     </tr>
                     <tr>
                         <td class="row-item">
-                            <strong>Príslušenstvo (Obaly + Tlmítka)</strong>
-                            <span>Sada obalov (130€) + Vic Firth MutePP5 (100€)</span>
+                            <strong>Silent Pack & Obaly</strong>
+                            <span>Evans dB Zero + Meinl Mutes + Obaly WINGS</span>
                         </td>
-                        <td class="col-price old-price">230 €</td>
+                        <td class="col-price old-price">~ 300 €</td>
                     </tr>
 
                     <tr class="total-row">
-                        <td class="total-label">Hodnota tejto zostavy (Nové)</td>
-                        <td class="col-price" style="color: #aaa; font-size: 1.4rem; font-weight: bold;">~ 3 255 €</td>
+                        <td class="total-label">Približná hodnota tejto zostavy (Nové)</td>
+                        <td class="col-price" style="color: #aaa; font-size: 1.4rem; font-weight: bold;">~ 3 600 €</td>
                     </tr>
                     <tr>
                         <td style="border:none; padding-top: 0;">
                             <span style="color: var(--accent-green); font-size: 1.1rem; font-weight: bold;">
-                                ✅ Ušetríte 1 865 € !
+                                ✅ Ušetríte viac ako 2 100 €
                             </span>
                         </td>
                         <td class="col-price" style="border:none; padding-top: 0;">
-                            <div class="final-price-tag">1 390 €</div>
+                            <div class="final-price-tag">1 490 €</div>
                         </td>
                     </tr>
                 </tbody>
@@ -389,68 +374,71 @@
         
         <div class="card">
             <div class="card-header">
-                <h3>TAYE RockPro & Evans</h3>
+                <h3>Evans Blany
                 <span style="font-size: 2rem;"></span>
             </div>
             <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
-                Kompletné preblanenie podľa faktúry pre masívny zvuk.
+                Kompletné preblanenie pre masívny zvuk.
             </p>
             <ul class="spec-list">
-                <li><strong>Tomy (Úderové):</strong> EVANS Black Chrome Fusion TomPack (10,12,14)</li>
-                <li><strong>Tomy (Rezonančné):</strong> EVANS G1 Clear Fusion TomPack (10,12,14)</li>
-                <li><strong>Snare:</strong> EVANS Hydraulic Black 14" + Glass 500 14"</li>
-                <li><strong>Kopák:</strong> EVANS Emad Onyx 22" + EQ3 Resonant Black 22"</li>
-                <li><strong>Tlmenie/Ochrana:</strong> SONITUS Kicker 22x16 + EVANS EQPB2 Patch (2ks)</li>
+                <li><strong>Tomy:</strong> EVANS Black Chrome (Batter) / G1 Clear (Reso)</li>
+                <li><strong>Snare:</strong> EVANS Hydraulic Black + Glass 500</li>
+                <li><strong>Kopák:</strong> EVANS Emad Onyx + EQ3 Resonant</li>
+                <li><strong>Tlmenie:</strong> SONITUS Kicker 22x16 + EVANS EQPB2 Patch</li>
             </ul>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h3>Činely Meinl (Byzance & Mb8)</h3>
+                <h3>Profi Sada Meinl Činelov</h3>
                 <span style="font-size: 2rem;"></span>
             </div>
             <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
-                Kombinácia profesionálnej série Mb8 a špičkovej "vlajkovej lode" Byzance.
+                Meinl MB8, Soundcaster až po ručne tepaný Byzance.
             </p>
             <ul class="spec-list">
-                <li><strong>Meinl 16" Byzance China:</strong> <span class="text-gold">Hand Hammered B20 Bronz</span>. Agresívny, temný, trashy zvuk.</li>
-                <li><strong>Meinl Mb8 Hi-Hat 14":</strong> Ostrý, jasný (B8).</li>
-                <li><strong>Meinl Mb8 Crash 16":</strong> Výbušný atak.</li>
-                <li><strong>Meinl Mb8 Ride 20":</strong> Čistý ping a silný bell.</li>
+                <li><strong>Meinl 16" Byzance Traditional China:</strong> <span class="text-gold">Hand Hammered B20</span>.</li>
+                <li><strong>Meinl 16" Soundcaster Custom:</strong> <span class="text-gold">B12 Bronze</span></li>
+                <li><strong>Meinl Mb8 Sada:</strong> Hi-Hat 14", Crash 16", Ride 20"</li>
             </ul>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <h3>Masívny Hardware & Pedál</h3>
-                <span style="font-size: 2rem;"></span>
+                <h3>Hardware & Pedál</h3>
+                <span style="font-size: 2rem;">⚙️</span>
             </div>
             <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
-                Extrémne stabilný hardvér a špičková dvojšľapka.
+                Stabilný hardvér a špičková dvojšľapka.
             </p>
             <ul class="spec-list">
-                <li><strong>Dvojšľapka YAMAHA DFP 9410:</strong> Profesionálny model, direct drive (priamy prevod), extrémne rýchla a presná odozva.</li>
-                <li><strong>Stojany:</strong> Sada extra masívnych šibeníc (boom stands) pre ťažké činely.</li>
-                <li><strong>Ostatné:</strong> Pevný snare stojan, hi-hat stojan a stabilná stolička.</li>
+                <li><strong>Dvojšľapka YAMAHA DFP 9410:</strong> Direct drive (priamy prevod), extrémne rýchla.</li>
+                <li><strong>Masívny HH Stojan:</strong> Model HH5000.</li>
+                <li><strong>Stojany:</strong> Na Snare, Tomy, Crash a Ride.</li>
+                <li><strong>Sedenie:</strong> Kvalitná stabilná stolička.</li>
             </ul>
         </div>
 
-        <div class="card" style="border-color: #2ecc71;">
+        <div class="card" style="border-color: var(--accent-blue);">
             <div class="card-header">
-                <h3 style="color: #2ecc71;">Full Príslušenstvo</h3>
-                <span style="font-size: 2rem;"></span>
+                <h3 style="color: var(--accent-blue);">Silent Pack & Obaly</h3>
+                <span style="font-size: 2rem;">🎧</span>
             </div>
             <p style="color:#888; margin-bottom:15px; font-size:0.9rem;">
-                Pripravené na cesty aj tiché cvičenie v byte.
+                Príslušenstvo v hodnote stoviek eur v cene.
             </p>
             <ul class="spec-list">
                 <li>
-                    <strong>Sada Obalov (Cases):</strong>
-                    <span class="list-sub-item">Kompletná ochrana pre celú sadu pri prevoze. (Hodnota 130€)</span>
+                    <strong>Evans dB Zero (Komplet sada):</strong>
+                    <span class="list-sub-item">Sieťkové blany na tiché hranie doma.</span>
                 </li>
                 <li>
-                    <strong>Tlmítka Vic Firth MUTEPP5:</strong>
-                    <span class="list-sub-item">Špičkové gumené pady na všetky bubny a činely pre tiché hranie. (Hodnota 100€)</span>
+                    <strong>Meinl Cymbal Mute Set:</strong>
+                    <span class="list-sub-item">Tlmítka na činely (14/16/18/20).</span>
+                </li>
+                <li>
+                    <strong>Obaly WINGS:</strong>
+                    <span class="list-sub-item">Sada puzdier na prenos bubnov.</span>
                 </li>
             </ul>
         </div>
@@ -480,17 +468,21 @@
 
     <script>
         /* --- JAVASCRIPT PRE GALÉRIU --- */
-        const totalImages = 31; // Fotky 1.jfif az 31.jfif
+        const maxImageIndex = 39; // Fotky idú až po 39.jfif
+        const excludedImages = [1, 12, 17]; // Fotky na vynechanie
         const fileExt = '.jfif';
+        
         const galleryGrid = document.getElementById('gallery-grid');
         const lightbox = document.getElementById('lightbox');
         const lbImg = document.getElementById('lb-img');
         
         let images = [];
 
-        // Pridaj ostatne fotky 31 -> 1
-        for (let i = totalImages; i >= 1; i--) {
-            images.push(`${i}${fileExt}`);
+        // Generovanie poľa obrázkov (od 39 dole, s vynechaním zakázaných)
+        for (let i = maxImageIndex; i >= 1; i--) {
+            if (!excludedImages.includes(i)) {
+                images.push(`${i}${fileExt}`);
+            }
         }
 
         let currentIndex = 0;
